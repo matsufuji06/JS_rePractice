@@ -60,9 +60,9 @@
 
 
 // レキシカルスコープ→外部スコープ（コードを書く場所によって参照できる変数が変わるスコープのこと→静的スコープ）
-let a = 2;
-function fn1() {
-  let b = 1;
+// let a = 2;
+// function fn1() {
+//   let b = 1;
   // ↓bは参照可能
   // function fn2() {
   //   let c = 3;
@@ -70,12 +70,35 @@ function fn1() {
   // }
   // fn2();
   
-}
-fn1();
+// }
+// fn1();
 
 // ↓bは参照不可
-function fn2() {
-  let c = 3;
-  console.log(b);
-}
-fn2();
+// function fn2() {
+  //   let c = 3;
+  //   console.log(b);
+  // }
+  // fn2();
+  
+  
+  // スコープチェーン（スコープが複数階層で連なっている状態。内から外へ変数を取得しに行く。）
+
+  // ↓スクリプトスコープであるletの方が取得される。（階層は同じでも、グローバルスコープの方が外側）
+  // let a = 2;
+  // window.a = 4;
+
+  // function fn1() {
+    // let a = 1;
+  //   function fn2() {
+  //     console.log(a);
+  //     let a = 3;
+  //   }
+  //   fn2();
+    
+  // }
+  // fn1();
+
+
+  
+  
+  
