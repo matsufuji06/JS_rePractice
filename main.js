@@ -99,6 +99,45 @@
   // fn1();
 
 
-  
+  // クロージャー（レキシカルスコープの変数を内側の関数が使用している状態）
+
+    //プライベート変数の定義
+    function incrementFactory() {
+      let num = 0;
+      // ↑参照可能
+      function increment() {
+        num = num + 1;
+        console.log(num);
+
+      }
+
+      return increment;
+
+    }
+
+    const increment = incrementFactory();
+
+    increment();
+    increment();
+    increment();
+
+
+
+    // 動的な関数の生成(状況によって変化する)
+    function addNumberFactory(num) {
+      function addNumber(value) {
+        return num + value;
+
+
+      }
+      return addNumber;
+
+    }
+
+    const add5 = addNumberFactory(5);
+    const add10 = addNumberFactory(10);
+    const result = add5(10);
+
+    console.log(result);
   
   
