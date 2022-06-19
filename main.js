@@ -102,42 +102,74 @@
   // クロージャー（レキシカルスコープの変数を内側の関数が使用している状態）
 
     //プライベート変数の定義
-    function incrementFactory() {
-      let num = 0;
-      // ↑参照可能
-      function increment() {
-        num = num + 1;
-        console.log(num);
+    // function incrementFactory() {
+    //   let num = 0;
+    //   // ↑参照可能
+    //   function increment() {
+    //     num = num + 1;
+    //     console.log(num);
 
-      }
+    //   }
 
-      return increment;
+    //   return increment;
 
-    }
+    // }
 
-    const increment = incrementFactory();
+    // const increment = incrementFactory();
 
-    increment();
-    increment();
-    increment();
+    // increment();
+    // increment();
+    // increment();
 
 
 
     // 動的な関数の生成(状況によって変化する)
-    function addNumberFactory(num) {
-      function addNumber(value) {
-        return num + value;
+    // function addNumberFactory(num) {
+    //   function addNumber(value) {
+    //     return num + value;
 
 
-      }
-      return addNumber;
+    //   }
+    //   return addNumber;
 
-    }
+    // }
 
-    const add5 = addNumberFactory(5);
-    const add10 = addNumberFactory(10);
-    const result = add5(10);
+    // const add5 = addNumberFactory(5);
+    // const add10 = addNumberFactory(10);
+    // const result = add5(10);
 
-    console.log(result);
+    // console.log(result);
   
+
+
+
+// 即時関数: IIFE（関数定義と同時に一度だけ実行される関数。 returnで定義元に返さないと、その関数内でしか使えない）
+// function a() {
+//   console.log('called');
   
+// }
+// a();
+
+let c = (function(d) {
+
+  let privateVal = 0;
+  let publicVal = 10;
+
+  function privateFn() {
+    console.log('privateFn is called');
+  }
+  function publicFn() {
+    console.log('publicFn is called');
+  }
+
+  return {
+    publicVal,
+    publicFn
+  };
+
+})();
+c.publicFn();
+
+console.log(c.publicVal);
+// ↑と同義(aのカッコは普通いらない)
+// (a)();
