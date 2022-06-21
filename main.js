@@ -150,26 +150,48 @@
 // }
 // a();
 
-let c = (function(d) {
+// let c = (function(d) {
 
-  let privateVal = 0;
-  let publicVal = 10;
+//   let privateVal = 0;
+//   let publicVal = 10;
 
-  function privateFn() {
-    console.log('privateFn is called');
-  }
-  function publicFn() {
-    console.log('publicFn is called');
-  }
+//   function privateFn() {
+//     console.log('privateFn is called');
+//   }
+//   function publicFn() {
+//     console.log('publicFn is called');
+//   }
 
-  return {
-    publicVal,
-    publicFn
-  };
+//   return {
+//     publicVal,
+//     publicFn
+//   };
 
-})();
-c.publicFn();
+// })();
+// c.publicFn();
 
-console.log(c.publicVal);
+// console.log(c.publicVal);
 // ↑と同義(aのカッコは普通いらない)
 // (a)();
+
+
+// 参照とコピー
+let a = "hello";
+let b = a;
+b = "bye";
+
+console.log(a);
+console.log(b);
+
+let c = {
+  prop: "hello"
+}
+
+let d = c;
+
+// ↓cの方も書き変わってしまう
+// d.prop = "bye";
+
+d = {};
+
+console.log(c, d);
