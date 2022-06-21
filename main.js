@@ -176,22 +176,37 @@
 
 
 // 参照とコピー
-let a = "hello";
-let b = a;
-b = "bye";
+// let a = "hello";
+// let b = a;
+// b = "bye";
 
-console.log(a);
-console.log(b);
+// console.log(a);
+// console.log(b);
 
-let c = {
-  prop: "hello"
-}
+// let c = {
+//   prop: "hello"
+// }
 
-let d = c;
+// let d = c;
 
 // ↓cの方も書き変わってしまう
 // d.prop = "bye";
 
-d = {};
+// d = {};
 
-console.log(c, d);
+// console.log(c, d);
+
+
+// constによる参照
+const b = {
+  prop: "hello"
+
+}
+
+// ↓エラー
+// b = {};
+
+// ↓プロパティ内の参照ならconst定義でもエラーにはならない
+b.prop = "bye"
+console.log(b);
+
