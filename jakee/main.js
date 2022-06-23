@@ -56,6 +56,11 @@
   const message4 =  `名前は${name}です。年齢は${age}歳です。`;
   console.log(message4);
 
-  
 
+
+// デフォルト値、引数など
+  // ↓仮引数にname = "~"とすると本引数がない場合のデフォルトの値が設定される
+const sayHello = (name = "fujifuji") => console.log(`こんにちは！${name}さん！`) ;
+
+sayHello(myProfile[0]);
 
