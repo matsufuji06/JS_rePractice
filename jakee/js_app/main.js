@@ -13,8 +13,22 @@ const onClickAdd = () => {
   const li = document.createElement("li");
   li.innerText = inputText;
 
-  // divタグの子要素として、liタグを設定
+  // button（完了）タグ生成
+  const completeButton = document.createElement("button");
+  completeButton.innerText = "完了"
+
+
+  // button（削除）タグ生成
+  const deleteButton = document.createElement("button");
+  deleteButton.innerText = "削除"
+  console.log(deleteButton);
+
+
+
+  // divタグの子要素として、liタグを設定とボタン２つを生成
   div.appendChild(li);
+  div.appendChild(completeButton);
+  div.appendChild(deleteButton);
 
   
   // 未完了のリストに追加
