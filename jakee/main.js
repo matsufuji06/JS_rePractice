@@ -114,7 +114,7 @@
 
 
 // mapやfilterを使った配列の処理
-const nameArr = ["田中", "山田", "マッツ"];
+// const nameArr = ["田中", "山田", "マッツ"];
 // for (let index = 0; index < nameArr.length; index++) {
 //   console.log(nameArr[index]);
 // }
@@ -192,7 +192,21 @@ const nameArr = ["田中", "山田", "マッツ"];
 // const fee = num || "金額未設定です";
 // console.log(fee);
 
-const num2 = null;
-const fee2 = num2 && "何か設定されました";
-console.log(fee2);
+// const num2 = null;
+// const fee2 = num2 && "何か設定されました";
+// console.log(fee2);
+
+
+
+
+
+
+
+
+
+// ---------------------------------------------------------------
+// ここから本の練習
+// ---------------------------------------------------------------
+
+
 
