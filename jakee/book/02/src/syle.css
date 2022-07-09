@@ -4,3 +4,12 @@
   margin: 8px;
   
 }
+
+li > div {
+  display: flex;
+  align-items: center;
+}
+
+button {
+  margin-left: 16px;
+}
